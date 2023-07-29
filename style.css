@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    background-image: linear-gradient(to top right, #e2b810 0%, #ec3b05 100%);
+
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+main {
+    display: flex;
+    width: 100rem;
+    height: 60rem;
+
+    border-radius: 9px;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    position: relative;
+}
+
+.player {
+    display: flex;
+    flex: 50%;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem;
+
+    transition: all 0.75s;
+}
+
+.name {
+    margin-bottom: 1rem;
+
+    font-size: 4rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    position: relative;
+}
+
+.move {
+    font-size: 3rem;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    color: #ee7d05;
+
+    transition: all 0.75s;
+}
+.score {
+    margin-bottom: auto;
+
+    font-size: 8rem;
+    font-weight: 300;
+    color: #ee7d05;
+}
+
+.player--active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+    font-weight: 700;
+}
+.player--active .score {
+    font-weight: 400;
+}
+.player--active .current {
+    opacity: 1;
+}
+
+.current {
+    width: 65%;
+    padding: 2rem;
+
+    border-radius: 9px;
+    background-color: #ee7d05;
+
+    text-align: center;
+    color:#fff;
+    opacity: 0.8;
+
+    transition: all 0.75s;
+}
+
+.current__label {
+    margin-bottom: 1rem;
+
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color:#eee;
+}
+
+.current__score {
+    font-size: 3.5rem;
+}
+
+.btn {
+
+    padding: 0.7rem 2.5rem;
+
+    border-radius: 50rem;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    background: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color:#444;
+    text-transform: uppercase;
+
+
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn::first-letter {
+    display: inline-block;
+    margin-right: 0.7rem;
+
+    font-size: 2.4rem;
+}
+
+.btn--new {
+    top: 3rem;
+}
+
+.btn--roll {
+    top: 40rem;
+}
+
+.btn--hold {
+    top: 46rem;
+}
+
+
+.btn:active {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+
+    transform: translate(-50%, 3px);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.dice {
+    height: 10rem;
+
+    position: absolute;
+    top: 16.5rem;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.hidden {
+    display: none;
+}
+
+.player--winner {
+    background-color: #2f2f2f;
+}
+
+.player--winner .name {
+    font-weight: 700;
+    color: #d50b0b;
+}
+
+.modal-window {
+
+    width: 615px;
+    height: 432px;
+
+    padding: 2rem 1.4rem;
+    background-image: linear-gradient(to right, #e2b810 0%, #ec3b05 100%);
+    border-radius: 30px;
+
+    position: absolute;
+    z-index: 10;
+}
+
+.welcome {
+
+    margin: 2rem 0;
+
+
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.inputs {
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.rules {
+
+    margin-bottom: 2rem;
+
+    font-family: 'Belanosima', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: justify;
+}
+.input__name
+{
+    width: 200px;
+    height: 30px;
+    margin: 0 0 2rem 1rem;
+    padding-left: 10px;
+
+    border: 3px solid white;
+    border-radius: 50rem;
+    background-color: #fff;
+
+    font-family: 'Belanosima', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+.input__name::placeholder {
+    color: #000;
+  }
+.input__name:focus {
+    border: 3px solid black;
+    outline:none;
+}
+.btn--begin {
+    bottom: 3rem;
+    color: #000;
+    background-image: linear-gradient(to right, #e2b810 0%, #ec3b05 100%);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}

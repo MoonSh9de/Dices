@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DICES</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="overlay"></div>
+        <div class="modal-window">
+            <h1 class="welcome">🎲Добро пожаловать в игру DICES!🎲</h1>
+            <p class="rules">Один из игроков бросает кость. Значение кости записывается в «Текущие очки». Игрок может рискнуть и бросить кость несколько раз, тем самым увеличив количество текущих очков, или сохранить очки и сделать их «несгораемыми» (Кнопка «Оставить»). Если на кости выпадет «1» , значение текущих очков обнулится и Вы не получите очки,  а очередь перейдёт ко второму игроку. Победителем станет тот, кто сможет набрать «100» и более очков. Желаем удачи и весёлой игры!</p>
+            <div class="inputs">
+                <input class = "input__name input__name--0" name = "input__name--0" type="text" placeholder="Игрок 1"  maxlength="10" required>
+                <br>
+                <input class = "input__name input__name--1" name = "input__name--1" type="text" placeholder="Игрок 2"  maxlength="10" required>
+                <button class = "btn btn--begin">🐷 Начать игру! </button>
+            </div>
+        </div>
+        <main>
+            <section class="player player--0 player--active">
+                <h2 class="move move--0" >Ваша очередь</h2>
+                <h2 class="name" id="name--0">Игрок 1</h2>
+                <p class="score" id="score--0">0</p>
+                <div class="current">
+                    <p class="current__label">Текущие очки</p>
+                    <p class="current__score" id="current--0">0</p>
+                </div>
+            </section>
+            <section class="player player--1">
+                <h2 class="move move--1 hidden">Ваша очередь</h2>
+                <h2 class="name" id="name--1">Игрок 2</h2>
+                <p class="score" id="score--1">0</p>
+                <div class="current">
+                    <p class="current__label">Текущие очки</p>
+                    <p class="current__score" id="current--1">0</p>
+                </div>
+            </section>
+            <img src="images/dice1.png" class="dice"  alt="Playing dice"/>
+            <div class="btns">
+                <button class="btn btn--new">🐷 Новая игра</button>
+                <button class="btn btn--roll">🎲 Бросить кость</button>
+                <button class="btn btn--hold">👌 Оставить</button>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
